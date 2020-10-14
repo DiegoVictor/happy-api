@@ -5,7 +5,7 @@ export default celebrate({
     name: Joi.string().required(),
     latitude: Joi.number().required(),
     longitude: Joi.number().required(),
-    about: Joi.string().required(),
+    about: Joi.string().max(300).required(),
     instructions: Joi.string().required(),
     opening_hours: Joi.string().required(),
     open_on_weekends: Joi.boolean().required(),
