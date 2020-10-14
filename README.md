@@ -69,7 +69,7 @@ npm run dev:server
 ## Versioning
 A simple versioning was made. Just remember to set after the `host` the `/v1/` string to your requests.
 ```
-GET http://localhost:3333/v1/ngos
+GET http://localhost:3333/v1/orphanages
 ```
 
 ## Routes
