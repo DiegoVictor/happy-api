@@ -16,6 +16,11 @@ routes.get('/:id', idValidator, orphanagesController.show);
 routes.post(
   '/',
   upload.array('images'),
+  async (request, response, next) => {
+    await orphanageValidator(request, response, (err: string) => {
+      next(err);
+    });
+  },
   orphanagesController.store,
 );
 
