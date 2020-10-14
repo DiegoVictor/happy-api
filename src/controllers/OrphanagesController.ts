@@ -5,18 +5,18 @@ import Orphanage from '../models/Orphanage';
 import OrphanagesView from '../views/orphanages_view';
 
 export default class OrphanagesController {
-  async index(request: Request, response: Response): Promise<Response> {
+  async index(request: Request, response: Response): Promise<void> {
     const orphanagesRepository = getRepository(Orphanage);
     const orphanages = await orphanagesRepository.find({
       relations: ['images'],
     });
 
-    return response.json(
+    response.json(
       orphanages.map(orphanage => OrphanagesView.render(orphanage)),
     );
   }
 
-  async show(request: Request, response: Response): Promise<Response> {
+  async show(request: Request, response: Response): Promise<Response | void> {
     const { id } = request.params;
 
     const orphanagesRepository = getRepository(Orphanage);
@@ -30,10 +30,10 @@ export default class OrphanagesController {
       });
     }
 
-    return response.json(OrphanagesView.render(orphanage));
+    response.json(OrphanagesView.render(orphanage));
   }
 
-  async store(request: Request, response: Response): Promise<Response> {
+  async store(request: Request, response: Response): Promise<Response | void> {
     const {
       name,
       latitude,
@@ -61,6 +61,6 @@ export default class OrphanagesController {
 
     await orphanagesRepository.save(orphanage);
 
-    return response.status(201).json(orphanage);
+    response.status(201).json(orphanage);
   }
 }
