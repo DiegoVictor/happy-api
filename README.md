@@ -74,7 +74,7 @@ GET http://localhost:3333/v1/orphanages
 
 ## Routes
 |route|HTTP Method|params|description
-|:---|:---:|:---:|:---:|:---:|:---:
+|:---|:---:|:---:|:---:
 |`/orphanages`|GET| - |Lists orphanages.
 |`/orphanages/:id`|GET|`:id` of the orphanage.|Return one orphanage.
 |`/orphanages`|POST|Body with new orphanage [form data](https://developer.mozilla.org/docs/Web/API/FormData) (See insomnia file for good example).|Create a new orphanage.
