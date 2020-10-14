@@ -1,6 +1,9 @@
 # [API] Happy
+![CircleCI](https://img.shields.io/circleci/build/github/DiegoVictor/happy-api?style=flat-square&logo=circleci)
 [![eslint](https://img.shields.io/badge/eslint-6.8.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
+[![jest](https://img.shields.io/badge/jest-26.5.3-brightgreen?style=flat-square&logo=jest)](https://jestjs.io/)
+[![coverage](https://img.shields.io/codecov/c/gh/DiegoVictor/happy-api?logo=codecov&style=flat-square)](https://codecov.io/gh/DiegoVictor/happy-api)
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/happy-api/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Happy&uri=https%3A%2F%2Fraw.githubusercontent.com%2FDiegoVictor%2Fhappy-api%2Fmaster%2FInsomnia_2020-10-13.json)
@@ -17,6 +20,8 @@ Responsible for provide data to the [`web`](https://github.com/DiegoVictor/happy
   * [Versioning](#versioning)
   * [Routes](#routes)
     * [Requests](#requests)
+* [Running the tests](#running-the-tests)
+  * [Coverage report](#coverage-report)
 
 # Installing
 Easy peasy lemon squeezy:
@@ -95,3 +100,16 @@ Request body:
   "images": <file(s)>
 }
 ```
+
+# Running the tests
+[Jest](https://jestjs.io/) was the choice to test the app, to run:
+```
+$ yarn test
+```
+Or:
+```
+$ npm run test
+```
+
+## Coverage report
+You can see the coverage report inside `tests/coverage`. They are automatically created after the tests run.
