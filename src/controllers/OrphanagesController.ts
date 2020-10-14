@@ -5,7 +5,7 @@ import Orphanage from '../models/Orphanage';
 import OrphanagesView from '../views/orphanages_view';
 
 export default class OrphanagesController {
-  async index(_: Request, response: Response): Promise<Response> {
+  async index(request: Request, response: Response): Promise<Response> {
     const orphanagesRepository = getRepository(Orphanage);
     const orphanages = await orphanagesRepository.find({
       relations: ['images'],
