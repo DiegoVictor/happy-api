@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { getRepository } from 'typeorm';
+import { Connection, getRepository } from 'typeorm';
 import { createConnection } from 'typeorm';
 import fs from 'fs';
 
@@ -10,9 +10,11 @@ import factory from '../utils/factory';
 
 describe('Orphanates controller', () => {
   const now = new Date().getTime();
+  let connection: Connection;
 
   beforeAll(async () => {
-    await createConnection();
+    connection = await createConnection();
+    await connection.runMigrations();
   });
 
   beforeEach(async () => {
@@ -27,6 +29,7 @@ describe('Orphanates controller', () => {
       __dirname + '/../../uploads/' + now + '-example.jpg',
       () => {},
     );
+    await connection.dropDatabase();
   });
 
   it('should be able to get a list of orphanates', async () => {
