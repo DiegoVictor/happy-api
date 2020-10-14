@@ -30,7 +30,7 @@ $ npm install
 > Was installed and configured the [`eslint`](https://eslint.org/) and [`prettier`](https://prettier.io/) to keep the code clean and patterned.
 
 ## Configuring
-The application use two databases: [SQLite](https://www.sqlite.org/index.html) and [Redis](https://redis.io/).
+The application use just one databases: [SQLite](https://www.sqlite.org/index.html).
 
 ### SQLite
 Store the orphanages. For more information to how to setup your database see:
