@@ -4,11 +4,11 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import helmet from 'helmet';
+import { errors } from 'celebrate';
 
 import './database';
 import routes from './routes';
 import errorHandler from './errors/handler';
-import { errors } from 'celebrate';
 
 const app = express();
 
