@@ -12,11 +12,14 @@ describe('Error Handler', () => {
       json: () => {},
     };
 
+    const status = jest.spyOn(response, 'status');
+    const json = jest.spyOn(response, 'json');
+
     errorHandler(new Error(), {} as Request, response as Response, next);
 
     expect(next).not.toHaveBeenCalled();
-    expect(response.status).toHaveBeenCalledWith(500);
-    expect(response.json).toHaveBeenCalledWith({
+    expect(status).toHaveBeenCalledWith(500);
+    expect(json).toHaveBeenCalledWith({
       message: 'Internal Server Error',
     });
   });
