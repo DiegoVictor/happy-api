@@ -55,7 +55,7 @@ describe('Orphanates controller', () => {
     const response = await request(app).get('/v1/orphanages').send();
 
     orphanages.forEach(orphanage => {
-      const regex = new RegExp(`${process.env.APP_URL}/orphanages/\\d`);
+      const regex = new RegExp(`${process.env.BASE_URL}/v1/orphanages/\\d`);
       expect(response.body).toContainEqual({
         name: orphanage.name,
         latitude: Number(orphanage.latitude),
@@ -96,7 +96,7 @@ describe('Orphanates controller', () => {
       opening_hours: orphanage.opening_hours,
       open_on_weekends: orphanage.open_on_weekends,
       images: [],
-      url: `${process.env.APP_URL}/orphanages/${id}`,
+      url: `${process.env.BASE_URL}/v1/orphanages/${id}`,
     });
   });
 

@@ -12,7 +12,7 @@ export default {
       opening_hours: orphanage.opening_hours,
       open_on_weekends: orphanage.open_on_weekends,
       images: orphanage.images.map(image => ImagesViews.render(image)),
-      url: `${process.env.APP_URL}/orphanages/${orphanage.id}`,
+      url: `${process.env.BASE_URL}/v1/orphanages/${orphanage.id}`,
     };
   },
 };

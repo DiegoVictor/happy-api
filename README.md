@@ -59,7 +59,7 @@ In this file you may configure your app's port and a url. Rename the `.env.examp
 |key|description|default
 |---|---|---
 |APP_PORT|Port number where the app will run.|`3333`
-|APP_URL|App's url with version (v1).|`http://localhost:3333/v1`
+|BASE_URL|App's url.|`http://localhost:3333`
 
 # Usage
 To start up the app run:
