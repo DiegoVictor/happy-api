@@ -4,6 +4,7 @@ import ImagesViews from './images_views';
 export default {
   render(orphanage: Orphanage) {
     return {
+      id: orphanage.id,
       name: orphanage.name,
       latitude: orphanage.latitude,
       longitude: orphanage.longitude,

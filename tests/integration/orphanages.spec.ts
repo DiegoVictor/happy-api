@@ -57,6 +57,7 @@ describe('Orphanates controller', () => {
     orphanages.forEach(orphanage => {
       const regex = new RegExp(`${process.env.BASE_URL}/v1/orphanages/\\d`);
       expect(response.body).toContainEqual({
+        id: expect.any(Number),
         name: orphanage.name,
         latitude: Number(orphanage.latitude),
         longitude: Number(orphanage.longitude),
@@ -88,6 +89,7 @@ describe('Orphanates controller', () => {
       .send();
 
     expect(response.body).toStrictEqual({
+      id,
       name: orphanage.name,
       latitude: Number(orphanage.latitude),
       longitude: Number(orphanage.longitude),
