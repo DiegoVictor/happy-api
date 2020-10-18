@@ -65,6 +65,7 @@ describe('Orphanates controller', () => {
         instructions: orphanage.instructions,
         opening_hours: orphanage.opening_hours,
         open_on_weekends: orphanage.open_on_weekends,
+        whatsapp: orphanage.whatsapp,
         images: [
           {
             id: expect.any(Number),
@@ -97,6 +98,7 @@ describe('Orphanates controller', () => {
       instructions: orphanage.instructions,
       opening_hours: orphanage.opening_hours,
       open_on_weekends: orphanage.open_on_weekends,
+      whatsapp: orphanage.whatsapp,
       images: [],
       url: `${process.env.BASE_URL}/v1/orphanages/${id}`,
     });
@@ -129,6 +131,7 @@ describe('Orphanates controller', () => {
       .field('instructions', orphanage.instructions)
       .field('opening_hours', orphanage.opening_hours)
       .field('open_on_weekends', orphanage.open_on_weekends)
+      .field('whatsapp', orphanage.whatsapp)
       .attach('images', 'tests/utils/example.jpg');
 
     expect(response.body).toStrictEqual({
@@ -140,6 +143,7 @@ describe('Orphanates controller', () => {
       instructions: orphanage.instructions,
       opening_hours: orphanage.opening_hours,
       open_on_weekends: orphanage.open_on_weekends,
+      whatsapp: orphanage.whatsapp,
       images: [
         {
           id: expect.any(Number),

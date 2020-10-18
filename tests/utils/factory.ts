@@ -12,6 +12,7 @@ factory.define('Orphanage', Orphanage, {
   instructions: faker.lorem.sentence,
   opening_hours: faker.lorem.sentence,
   open_on_weekends: faker.random.boolean,
+  whatsapp: faker.phone.phoneNumber,
 });
 
 factory.define('Image', Image, {
