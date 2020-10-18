@@ -9,5 +9,6 @@ export default celebrate({
     instructions: Joi.string().required(),
     opening_hours: Joi.string().required(),
     open_on_weekends: Joi.boolean().required(),
+    whatsapp: Joi.string().required(),
   }),
 });

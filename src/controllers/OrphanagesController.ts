@@ -42,6 +42,7 @@ export default class OrphanagesController {
       instructions,
       opening_hours,
       open_on_weekends,
+      whatsapp,
     } = request.body;
     const images = request.files as Express.Multer.File[];
 
@@ -54,6 +55,7 @@ export default class OrphanagesController {
       instructions,
       opening_hours,
       open_on_weekends,
+      whatsapp,
       images: images.map(image => ({
         path: image.filename,
       })),
