@@ -8,7 +8,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Happy&uri=https%3A%2F%2Fraw.githubusercontent.com%2FDiegoVictor%2Fhappy-api%2Fmaster%2FInsomnia_2020-10-18.json)
 
-Responsible for provide data to the [`web`](https://github.com/DiegoVictor/happy-web) front-end. Permit to register orphanages. The app has validation, also a simple versioning was made.
+Responsible for provide data to the [`web`](https://github.com/DiegoVictor/happy-web) and [`mobile`](https://github.com/DiegoVictor/happy-app) front-ends. Permit to register orphanages. The app has validation, also a simple versioning was made.
 
 ## Table of Contents
 * [Installing](#installing)
