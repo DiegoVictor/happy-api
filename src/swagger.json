@@ -14,5 +14,56 @@
     }
   ],
   "paths": {
+  },
+  "components": {
+    "schemas": {
+      "Orphanage": {
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "about": {
+            "type": "string"
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "opening_hours": {
+            "type": "string"
+          },
+          "open_on_weekends": {
+            "type": "boolean"
+          },
+          "whatsapp": {
+            "type": "string"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "path": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+    },
   }
 }
