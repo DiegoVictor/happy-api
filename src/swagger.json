@@ -112,6 +112,51 @@
         }
       }
     },
+    "/orphanages/{id}": {
+      "get": {
+        "tags": ["orphanages"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return one orphanage",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Orphanage"
+                },
+                "examples": {
+                  "Orphanage": {
+                    "$ref": "#/components/examples/Orphanage"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Orphanage not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "message": "Orphanage not found"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   },
   "components": {
     "schemas": {
