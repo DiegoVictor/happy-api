@@ -38,6 +38,80 @@
           }
         }
       },
+      "post": {
+        "tags": ["orphanages"],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "latitude",
+                  "longitude",
+                  "about",
+                  "instructions",
+                  "opening_hours",
+                  "open_on_weekends",
+                  "whatsapp",
+                  "images"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "latitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  },
+                  "about": {
+                    "type": "string"
+                  },
+                  "instructions": {
+                    "type": "string"
+                  },
+                  "opening_hours": {
+                    "type": "string"
+                  },
+                  "open_on_weekends": {
+                    "type": "boolean"
+                  },
+                  "whatsapp": {
+                    "type": "string"
+                  },
+                  "images": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Create a new orphanage",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Orphanage"
+                },
+                "examples": {
+                  "Orphanage": {
+                    "$ref": "#/components/examples/Orphanage"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
   },
   "components": {
     "schemas": {
