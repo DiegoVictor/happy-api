@@ -170,5 +170,49 @@
         }
       }
     },
+    "examples": {
+      "Orphanage": {
+        "value": {
+          "id": 1,
+          "name": "Lar das meninas 3",
+          "latitude": -22.4259997,
+          "longitude": -46.957406,
+          "about": "Adipisci cupiditate illo rerum sunt tempore. Non voluptate laborum enim hic tenetur perspiciatis sint. Quo totam recusandae dolores et ullam commodi. Ut consectetur saepe id voluptatem et quidem. Dolor neque consequuntur ipsa. Placeat sit aut nostrum similique dolorem voluptatem et velit enim.",
+          "instructions": "Venha visitar",
+          "opening_hours": "Das 8h às 18h",
+          "open_on_weekends": false,
+          "whatsapp": "11598452667",
+          "images": [
+            {
+              "id": 1,
+              "path": "http://localhost:3333/uploads/1628982869145.jpg"
+            }
+          ],
+          "url": "http://localhost:3333/v1/orphanages/1"
+        }
+      },
+      "Orphanages": {
+        "value": [
+          {
+            "id": 1,
+            "name": "Lar das meninas 3",
+            "latitude": -22.4259997,
+            "longitude": -46.957406,
+            "about": "Adipisci cupiditate illo rerum sunt tempore. Non voluptate laborum enim hic tenetur perspiciatis sint. Quo totam recusandae dolores et ullam commodi. Ut consectetur saepe id voluptatem et quidem. Dolor neque consequuntur ipsa. Placeat sit aut nostrum similique dolorem voluptatem et velit enim.",
+            "instructions": "Venha visitar",
+            "opening_hours": "Das 8h às 18h",
+            "open_on_weekends": false,
+            "whatsapp": "11598452667",
+            "images": [
+              {
+                "id": 1,
+                "path": "http://localhost:3333/uploads/1628982869145.jpg"
+              }
+            ],
+            "url": "http://localhost:3333/v1/orphanages/1"
+          }
+        ]
+      }
+    }
   }
 }
