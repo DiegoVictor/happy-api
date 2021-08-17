@@ -1,7 +1,7 @@
 {
   "openapi":"3.0.2",
   "info": {
-    "title":"API Title",
+    "title":"Happy",
     "version":"1.0",
     "license": {
       "name": "MIT",
