@@ -88,6 +88,13 @@
           }
         }
       },
+      "Error": {
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
     },
   }
 }
