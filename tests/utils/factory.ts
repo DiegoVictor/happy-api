@@ -1,4 +1,4 @@
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import factory from 'factory-girl';
 
 import Orphanage from '../../src/models/Orphanage';
@@ -11,13 +11,13 @@ factory.define('Orphanage', Orphanage, {
   about: faker.lorem.sentence,
   instructions: faker.lorem.sentence,
   opening_hours: faker.lorem.sentence,
-  open_on_weekends: faker.random.boolean,
+  open_on_weekends: faker.datatype.boolean,
   whatsapp: faker.phone.phoneNumber,
 });
 
 factory.define('Image', Image, {
   path: () => faker.random.alphaNumeric(10) + '.jpg',
-  orphanage_id: faker.random.number,
+  orphanage_id: faker.datatype.number,
 });
 
 export default factory;
