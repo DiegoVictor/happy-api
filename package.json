@@ -12,7 +12,6 @@
     "helmet": "^7.0.0",
     "multer": "^1.4.5-lts.1",
     "sqlite3": "^5.0.0",
-    "swagger-ui-express": "^5.0.0",
     "typeorm": "^0.2.28"
   },
   "scripts": {
