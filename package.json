@@ -12,7 +12,7 @@
     "helmet": "^7.0.0",
     "multer": "^1.4.5-lts.1",
     "sqlite3": "^5.0.0",
-    "typeorm": "^0.2.28"
+    "typeorm": "^0.3.20"
   },
   "scripts": {
     "dev:server": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
