@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
-import Orphanage from '../models/Orphanage';
+import { Orphanage } from '../models/Orphanage';
 import OrphanagesView from '../views/orphanages_view';
 
-export default class OrphanagesController {
+export class OrphanagesController {
   async index(request: Request, response: Response): Promise<void> {
     const orphanagesRepository = getRepository(Orphanage);
     const orphanages = await orphanagesRepository.find({
