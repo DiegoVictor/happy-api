@@ -4,8 +4,8 @@ import { createConnection } from 'typeorm';
 import fs from 'fs';
 
 import app from '../../src/app';
-import Image from '../../src/models/Image';
-import Orphanage from '../../src/models/Orphanage';
+import { Image } from '../../src/models/Image';
+import { Orphanage } from '../../src/models/Orphanage';
 import factory from '../utils/factory';
 
 describe('Orphanates controller', () => {

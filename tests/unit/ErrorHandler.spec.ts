@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import errorHandler from '../../src/errors/handler';
+import { errorHandler } from '../../src/errors/handler';
 
 describe('Error Handler', () => {
   it('should be able to receive a Internal Server Error', async () => {

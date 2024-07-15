@@ -9,7 +9,7 @@ import { errors } from 'celebrate';
 import './database';
 
 import routes from './routes';
-import errorHandler from './errors/handler';
+import { errorHandler } from './errors/handler';
 
 const app = express();
 

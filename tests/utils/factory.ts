@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker';
 import factory from 'factory-girl';
 
-import Orphanage from '../../src/models/Orphanage';
-import Image from '../../src/models/Image';
+import { Orphanage } from '../../src/models/Orphanage';
+import { Image } from '../../src/models/Image';
 
 factory.define('Orphanage', Orphanage, {
   name: faker.person.fullName,
