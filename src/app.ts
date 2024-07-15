@@ -6,8 +6,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { errors } from 'celebrate';
 
-import './database';
-
+import './database/datasource';
 import routes from './routes';
 import { errorHandler } from './errors/handler';
 
