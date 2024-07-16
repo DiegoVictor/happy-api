@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
 
 import { Orphanage } from '../models/Orphanage';
 import OrphanagesView from '../views/orphanages_view';
+import { AppDataSource } from '../database/datasource';
 
 export class OrphanagesController {
   async index(request: Request, response: Response): Promise<void> {
-    const orphanagesRepository = getRepository(Orphanage);
+    const orphanagesRepository = AppDataSource.getRepository(Orphanage);
     const orphanages = await orphanagesRepository.find({
       relations: ['images'],
     });
@@ -19,7 +19,7 @@ export class OrphanagesController {
   async show(request: Request, response: Response): Promise<Response | void> {
     const { id } = request.params;
 
-    const orphanagesRepository = getRepository(Orphanage);
+    const orphanagesRepository = AppDataSource.getRepository(Orphanage);
     const orphanage = await orphanagesRepository.findOne(id, {
       relations: ['images'],
     });
@@ -46,7 +46,7 @@ export class OrphanagesController {
     } = request.body;
     const images = request.files as Express.Multer.File[];
 
-    const orphanagesRepository = getRepository(Orphanage);
+    const orphanagesRepository = AppDataSource.getRepository(Orphanage);
     const orphanage = orphanagesRepository.create({
       name,
       latitude,
