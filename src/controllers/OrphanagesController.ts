@@ -20,7 +20,10 @@ export class OrphanagesController {
     const { id } = request.params;
 
     const orphanagesRepository = AppDataSource.getRepository(Orphanage);
-    const orphanage = await orphanagesRepository.findOne(id, {
+    const orphanage = await orphanagesRepository.findOne({
+      where: {
+        id: parseInt(id, 10),
+      },
       relations: ['images'],
     });
 
