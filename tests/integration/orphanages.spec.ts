@@ -1,25 +1,23 @@
 import request from 'supertest';
-import { Connection, getRepository } from 'typeorm';
-import { createConnection } from 'typeorm';
 import fs from 'fs';
 
 import app from '../../src/app';
 import { Image } from '../../src/models/Image';
 import { Orphanage } from '../../src/models/Orphanage';
 import factory from '../utils/factory';
+import { AppDataSource } from '../../src/database/datasource';
 
 describe('Orphanates controller', () => {
   const now = new Date().getTime();
-  let connection: Connection;
 
   beforeAll(async () => {
-    connection = await createConnection();
+    const connection = await AppDataSource.initialize();
     await connection.runMigrations();
   });
 
   beforeEach(async () => {
-    const orphanagesRepository = getRepository(Orphanage);
-    const imagesRepository = getRepository(Image);
+    const orphanagesRepository = AppDataSource.getRepository(Orphanage);
+    const imagesRepository = AppDataSource.getRepository(Image);
     await orphanagesRepository.clear();
     await imagesRepository.clear();
   });
@@ -29,14 +27,14 @@ describe('Orphanates controller', () => {
       __dirname + '/../../uploads/' + now + '-example.jpg',
       () => {},
     );
-    await connection.dropDatabase();
+    await AppDataSource.dropDatabase();
   });
 
   it('should be able to get a list of orphanates', async () => {
     const orphanages = await factory.attrsMany<Orphanage>('Orphanage', 3);
 
     const promises: Promise<Orphanage>[] = [];
-    const orphanagesRepository = getRepository(Orphanage);
+    const orphanagesRepository = AppDataSource.getRepository(Orphanage);
     orphanages.forEach(orphanage => {
       const data = orphanagesRepository.create(orphanage);
       promises.push(orphanagesRepository.save(data));
@@ -49,7 +47,7 @@ describe('Orphanates controller', () => {
       savedOrphanages.map(orphanage => ({ orphanage })),
     );
 
-    const imagesRepository = getRepository(Image);
+    const imagesRepository = AppDataSource.getRepository(Image);
     await imagesRepository.save(imagesRepository.create(images));
 
     const response = await request(app).get('/v1/orphanages').send();
@@ -80,7 +78,7 @@ describe('Orphanates controller', () => {
   it('should be able to get one orphanate', async () => {
     const orphanage = await factory.attrs<Orphanage>('Orphanage');
 
-    const orphanagesRepository = getRepository(Orphanage);
+    const orphanagesRepository = AppDataSource.getRepository(Orphanage);
 
     const data = orphanagesRepository.create(orphanage);
     const { id } = await orphanagesRepository.save(data);
