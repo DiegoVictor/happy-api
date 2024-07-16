@@ -1,5 +1,5 @@
 import request from 'supertest';
-import fs from 'fs';
+import fs from 'fs/promises';
 
 import app from '../../src/app';
 import { Image } from '../../src/models/Image';
@@ -23,10 +23,7 @@ describe('Orphanates controller', () => {
   });
 
   afterAll(async () => {
-    await fs.unlink(
-      __dirname + '/../../uploads/' + now + '-example.jpg',
-      () => {},
-    );
+    await fs.unlink(__dirname + '/../../uploads/' + now + '-example.jpg');
     await AppDataSource.dropDatabase();
   });
 
