@@ -15,9 +15,9 @@ Responsible for provide data to the [`web`](https://github.com/DiegoVictor/happy
 ## Table of Contents
 * [Installing](#installing)
   * [Configuring](#configuring)
+    * [.env](#env)
     * [SQLite](#sqlite)
       * [Migrations](#migrations)
-    * [.env](#env)
 * [Usage](#usage)
   * [Versioning](#versioning)
   * [Routes](#routes)
@@ -43,6 +43,14 @@ The application use just one database: [SQLite](https://www.sqlite.org/index.htm
 $ docker-compose up -d
 ```
 
+### .env
+In this file you may configure your app's port and a url. Rename the `.env.example` in the root directory to `.env` then just update with your settings.
+
+|key|description|default
+|---|---|---
+|APP_PORT|Port number where the app will run.|`3333`
+|BASE_URL|App's url.|`http://localhost:3333`
+
 ### SQLite
 Store the orphanages. For more information to how to setup your database see:
 * [typeorm](https://typeorm.io/#/using-ormconfig)
@@ -58,14 +66,6 @@ Or:
 $ yarn typeorm migration:run -- -d ./src/database/datasource.ts
 ```
 > See more information on [TypeORM Migrations](https://typeorm.io/#/migrations).
-
-### .env
-In this file you may configure your app's port and a url. Rename the `.env.example` in the root directory to `.env` then just update with your settings.
-
-|key|description|default
-|---|---|---
-|APP_PORT|Port number where the app will run.|`3333`
-|BASE_URL|App's url.|`http://localhost:3333`
 
 # Usage
 To start up the app run:
